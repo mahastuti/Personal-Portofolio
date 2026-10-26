@@ -5,6 +5,20 @@ export function Sections() {
 
   return (
     <>
+      <section id="background" className="block" aria-labelledby="background-title">
+        <h2 id="background-title" className="block__title">
+          Background
+        </h2>
+        <div className="about">
+          {about.paragraphs.map((t) => (
+            <p key={t}>{t}</p>
+          ))}
+          <p className="about__tools">
+            <span>Tools I use</span> {about.tools.join(', ')}
+          </p>
+        </div>
+      </section>
+
       <section id="work" className="block" aria-labelledby="work-title">
         <h2 id="work-title" className="block__title">
           Selected work
@@ -27,20 +41,6 @@ export function Sections() {
             </li>
           ))}
         </ul>
-      </section>
-
-      <section id="about" className="block" aria-labelledby="about-title">
-        <h2 id="about-title" className="block__title">
-          About
-        </h2>
-        <div className="about">
-          {about.paragraphs.map((t) => (
-            <p key={t}>{t}</p>
-          ))}
-          <p className="about__tools">
-            <span>Tools I use</span> {about.tools.join(', ')}
-          </p>
-        </div>
       </section>
 
       <section id="contact" className="block block--contact" aria-labelledby="contact-title">

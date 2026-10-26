@@ -5,7 +5,7 @@ const figureSrc = `${import.meta.env.BASE_URL}images/home/nalin-character.webp`
 
 export function PortfolioHero({ heroRef }: { heroRef?: Ref<HTMLElement> }) {
   return (
-    <section ref={heroRef} id="top" className="hero" aria-label="Introduction" tabIndex={-1}>
+    <section ref={heroRef} id="about" className="hero" aria-label="About me" tabIndex={-1}>
       <div className="hero__world" aria-hidden="true" />
       <div className="hero__inner" data-hero-inner>
         <div className="hero__copy">

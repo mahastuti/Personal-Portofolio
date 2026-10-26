@@ -1,21 +1,21 @@
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 import { SiteNav } from './home/SiteNav'
 import { PortfolioHero } from './home/PortfolioHero'
 import { Sections } from './home/Sections'
-import { IntroExperience } from './intro/IntroExperience'
-
-const prefersReducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches
+import { IntroScene } from './intro/IntroScene'
+import { usePrefersReducedMotion } from './hooks/usePrefersReducedMotion'
 
 function App() {
   const navRef = useRef<HTMLElement>(null)
-  // reduced motion: langsung ke homepage tanpa intro
-  const [reduced] = useState(prefersReducedMotion)
+  const reduced = usePrefersReducedMotion()
 
   return (
     <>
       <SiteNav navRef={navRef} hidden={!reduced} />
       <main>
-        {reduced ? <PortfolioHero /> : <IntroExperience navRef={navRef} />}
+        {/* reduced motion: intro jadi gambar statis, about me langsung di bawahnya */}
+        <IntroScene key={String(reduced)} navRef={navRef} reduced={reduced} />
+        {reduced && <PortfolioHero />}
         <Sections />
       </main>
     </>

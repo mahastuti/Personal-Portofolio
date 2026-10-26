@@ -11,12 +11,10 @@ export const site = {
 
 export const intro = {
   label: 'EVERYONE HAS A STORY.',
-  prompt: 'FIND ME IN THE CROWD.',
-  cursor: 'ENTER MY WORLD ↗',
-  selected: "THERE'S MORE THAN MEETS THE EYE.",
+  note: "THERE'S MORE THAN MEETS THE EYE.",
+  noteTouch: 'TOUCH AND HOLD TO LOOK CLOSER.',
   scroll: 'SCROLL TO STEP INSIDE ↓',
   skip: 'Skip intro',
-  targetLabel: 'Nalin — enter my world',
 }
 
 export const hero = {
